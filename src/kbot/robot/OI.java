@@ -39,7 +39,7 @@ public class OI {
         shoot = new JoystickButton(opXbox,XBOX_RB);
         visionToggle = new JoystickButton(opXbox,XBOX_B);
         
-        chickenRelease = new JoystickButton(opXbox,XBOX_A);
+        chickenRelease = new JoystickButton(driverLogitech,XBOX_A);
         gearUp = new JoystickButton(driverLogitech,XBOX_RB);
         gearDown = new JoystickButton(driverLogitech,XBOX_LB);
     }
