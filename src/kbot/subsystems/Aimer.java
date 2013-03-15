@@ -1,19 +1,19 @@
 package kbot.subsystems;
 
-import kbot.robot.RobotMap;
-import kbot.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import kbot.commands.*;
+import kbot.robot.RobotMap;
 
-public class Aimer extends Subsystem {
-    
+public class Aimer extends Subsystem 
+{
     SpeedController motor = RobotMap.aimerMotor;
     AnalogChannel pot = RobotMap.aimerPot;
     DigitalInput topLimit = RobotMap.topLimit;
     DigitalInput bottomLimit = RobotMap.bottomLimit;
 
+    //Constants
     private static final boolean LIMIT_SWITCH_ON = true;
     private static final double AIM_SPEED = 0.20;
     private static final double OPERATOR_DEADBAND = 0.10;
@@ -27,9 +27,9 @@ public class Aimer extends Subsystem {
     {
         joystickInput *= -1;
         
-        SmartDashboard.putNumber("Pot", pot.getAverageVoltage());
+        SmartDashboard.putNumber("Pot:", pot.getVoltage());
         
-        if(Math.abs(joystickInput) > OPERATOR_DEADBAND && !(atBottom() || atTop()))
+        if((Math.abs(joystickInput) > OPERATOR_DEADBAND) && !(atBottom() || atTop()))
 	{
             // if going up
             if(joystickInput < 0)
@@ -43,8 +43,8 @@ public class Aimer extends Subsystem {
 	}
 	else if(atBottom())
 	{
-            //printf("bottom switch pressed\n");
-            if(joystickInput > 0.0) 
+            //printf("Bottom switch pressed\n");
+            if(joystickInput > 0.0)
             {
                 joystickInput = 0.0;
             }
@@ -52,6 +52,7 @@ public class Aimer extends Subsystem {
 	}
 	else if(atTop())
 	{
+            //printf("Top switch pressed\n");
             if(joystickInput < 0.0)
             {
                 joystickInput = 0.0;

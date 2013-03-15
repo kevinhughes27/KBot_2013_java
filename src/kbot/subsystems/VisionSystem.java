@@ -1,14 +1,12 @@
 package kbot.subsystems;
 
-import kbot.robot.RobotMap;
-import kbot.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
+import kbot.robot.RobotMap;
 
-public class VisionSystem extends Subsystem {
-    
+public class VisionSystem extends Subsystem 
+{   
     Solenoid ringLED = RobotMap.ringLED;
     boolean run = false;
     

@@ -1,13 +1,11 @@
 package kbot.subsystems;
 
-import kbot.robot.RobotMap;
-import kbot.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import kbot.robot.RobotMap;
 
-public class Shooter extends Subsystem {
-    
+public class Shooter extends Subsystem 
+{
     SpeedController shooterFront = RobotMap.shooterFrontMotor;
     SpeedController shooterBack = RobotMap.shooterBackMotor;
     Solenoid piston = RobotMap.shooterPiston;

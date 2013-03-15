@@ -7,8 +7,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 import kbot.commands.CommandBase;
 import kbot.commands.autonomous.*;
 
-public class KBot extends IterativeRobot {
-
+public class KBot extends IterativeRobot 
+{
     Command autonomousCommand;
 
     public void robotInit() 
@@ -17,6 +17,7 @@ public class KBot extends IterativeRobot {
         CommandBase.init();
         
         autonomousCommand = new BackCenter3();
+        //autonomousCommand = new BackCenter3_openLoop();
     }
 
     public void autonomousInit() 

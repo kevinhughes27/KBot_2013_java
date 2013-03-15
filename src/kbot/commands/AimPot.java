@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AimPot extends Command {
+public class AimPot extends Command 
+{
     
     private double setPoint;
     

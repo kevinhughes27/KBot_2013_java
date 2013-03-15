@@ -2,8 +2,8 @@ package kbot.robot;
 
 import edu.wpi.first.wpilibj.*;
 
-public class RobotMap {
-    
+public class RobotMap 
+{
     //Motor Defines
     private static final int LEFT_MOTOR = 1;
     private static final int RIGHT_MOTOR = 2;
@@ -26,25 +26,25 @@ public class RobotMap {
     //Analog Breakout
     private static final int POTENTIOMETER = 1;
     
-    
-    // drive train
+    //Drive Train
     public static SpeedController leftMotor;
     public static SpeedController rightMotor;
     public static RobotDrive robotDrive;
     public static Solenoid gearPiston;
     public static Solenoid chickenLittle;
     
-    // shooter
+    //Aiming
     public static SpeedController aimerMotor;
     public static AnalogChannel aimerPot;
     public static DigitalInput topLimit;
     public static DigitalInput bottomLimit;
     
+    //Shooter
     public static SpeedController shooterFrontMotor;
     public static SpeedController shooterBackMotor;
     public static Solenoid shooterPiston;
     
-    // other
+    //Other
     public static Compressor compressor;
     public static Solenoid ringLED;
     

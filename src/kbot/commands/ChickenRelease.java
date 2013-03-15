@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ChickenRelease extends Command {
+public class ChickenRelease extends Command 
+{
     
     public ChickenRelease() 
     {

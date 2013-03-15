@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AimDown extends Command {
+public class AimDown extends Command 
+{
     
     public AimDown() 
     {
@@ -24,20 +25,13 @@ public class AimDown extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        if(!CommandBase.aimer.atBottom())
-	{
-            CommandBase.aimer.aim(-1);
-	}
-	else
-	{
-            CommandBase.aimer.aim(0);
-	}
+        CommandBase.aimer.aim(-1);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-        return false || isTimedOut();
+        return CommandBase.aimer.atBottom() || isTimedOut();
     }
 
     // Called once after isFinished returns true
