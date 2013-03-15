@@ -1,48 +1,42 @@
 package kbot.robot;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
+import kbot.wrappers.XboxController;
 
-public class OI {
+public class OI 
+{
+    //Connection ports
+    public static final int DRIVER_PORT = 1;
+    public static final int OPERATOR_PORT = 2;
     
-    public static final int XBOX_A = 1;
-    public static final int XBOX_B = 2;
-    public static final int XBOX_X = 3;
-    public static final int XBOX_Y = 4;
-    public static final int XBOX_LB = 5;
-    public static final int XBOX_RB = 6;
-    public static final int XBOX_TRIGGER = 3;
-    public static final int XBOX_LEFT_Y = 2;
-    public static final int XBOX_LEFT_X = 1;
-    public static final int XBOX_RIGHT_Y = 5;
-    public static final int XBOX_RIGHT_X = 4;
-    public static final int XBOX_START = 8;
-    public static final int XBOX_SELECT = 7;
+    //Joysticks
+    public XboxController driverLogitech, opXbox;
     
-    public Joystick driverLogitech;
-    public Joystick opXbox;
-    
+    //Operator buttons
     JoystickButton push;
     JoystickButton shoot;
     JoystickButton visionToggle;
     
+    //Driver buttons
     JoystickButton chickenRelease;
     JoystickButton gearUp;
     JoystickButton gearDown;
     
     public OI()
     {
-        driverLogitech = new Joystick(1);
-        opXbox = new Joystick(2);
+        //Joysticks
+        driverLogitech = new XboxController(DRIVER_PORT);
+        opXbox = new XboxController(OPERATOR_PORT);
 
-        push = new JoystickButton(opXbox,XBOX_LB);
-        shoot = new JoystickButton(opXbox,XBOX_RB);
-        visionToggle = new JoystickButton(opXbox,XBOX_B);
+        //Operator buttons
+        push = new JoystickButton(opXbox.m_joy, opXbox.XBOX_LB);
+        shoot = new JoystickButton(opXbox.m_joy, opXbox.XBOX_RB);
+        visionToggle = new JoystickButton(opXbox.m_joy, opXbox.XBOX_B);
         
-        chickenRelease = new JoystickButton(opXbox,XBOX_A);
-        gearUp = new JoystickButton(driverLogitech,XBOX_RB);
-        gearDown = new JoystickButton(driverLogitech,XBOX_LB);
+        //Driver buttons
+        chickenRelease = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_A);
+        gearUp = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_RB);
+        gearDown = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_LB);
     }
- 
 }
 

@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class ToggleVision extends Command {
+public class ToggleVision extends Command 
+{
     
     public ToggleVision() 
     {

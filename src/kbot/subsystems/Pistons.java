@@ -1,16 +1,14 @@
 package kbot.subsystems;
 
-import kbot.robot.RobotMap;
-import kbot.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import kbot.robot.RobotMap;
 
-public class Pistons extends Subsystem {
-    
+public class Pistons extends Subsystem 
+{    
     Solenoid gearPiston = RobotMap.gearPiston;
     Solenoid chickenLittle = RobotMap.chickenLittle;
-    private boolean previousChicken = false;
+    private boolean previousChicken = RobotMap.chickenLittle.get(); //false
 
     public void initDefaultCommand() 
     {}

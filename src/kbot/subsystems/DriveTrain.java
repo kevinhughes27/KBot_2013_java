@@ -1,13 +1,12 @@
 package kbot.subsystems;
 
-import kbot.robot.RobotMap;
-import kbot.commands.*;
-
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import kbot.commands.*;
+import kbot.robot.RobotMap;
 
-public class DriveTrain extends Subsystem {
-    
+public class DriveTrain extends Subsystem 
+{    
     SpeedController leftMotor = RobotMap.leftMotor;
     SpeedController rightMotor = RobotMap.rightMotor;
     RobotDrive robotDrive = RobotMap.robotDrive;
@@ -37,7 +36,7 @@ public class DriveTrain extends Subsystem {
             rightStick = 0.0;
 	}
         
-        robotDrive.tankDrive(leftStick, rightStick);
+        robotDrive.tankDrive(leftStick, rightStick, true);
     }
     
 }

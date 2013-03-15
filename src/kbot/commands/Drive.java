@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class Drive extends Command {
+public class Drive extends Command 
+{
     
     public Drive() 
     {
@@ -18,8 +19,8 @@ public class Drive extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        double leftStick = CommandBase.oi.driverLogitech.getRawAxis(CommandBase.oi.XBOX_LEFT_Y);
-        double rightStick = CommandBase.oi.driverLogitech.getRawAxis(CommandBase.oi.XBOX_RIGHT_Y);
+        double leftStick = CommandBase.oi.driverLogitech.getJoyLeftY();
+        double rightStick = CommandBase.oi.driverLogitech.getJoyRightY();
         
         CommandBase.driveTrain.drive(leftStick, rightStick);
     }

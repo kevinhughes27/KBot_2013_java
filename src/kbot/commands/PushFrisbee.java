@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class PushFrisbee extends Command {
+public class PushFrisbee extends Command 
+{
     
     public PushFrisbee() 
     {

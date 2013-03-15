@@ -2,7 +2,8 @@ package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
 
-public class AimJoystick extends Command {
+public class AimJoystick extends Command 
+{
     
     public AimJoystick() 
     {
@@ -19,7 +20,7 @@ public class AimJoystick extends Command {
     protected void execute() 
     {
         // what axis?
-        CommandBase.aimer.aim(CommandBase.oi.opXbox.getRawAxis(CommandBase.oi.XBOX_LEFT_Y));
+        CommandBase.aimer.aim(CommandBase.oi.opXbox.getJoyLeftY());
     }
 
     // Make this return true when this Command no longer needs to run execute()
