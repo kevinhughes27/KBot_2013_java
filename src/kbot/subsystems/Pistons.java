@@ -8,7 +8,10 @@ public class Pistons extends Subsystem
 {    
     Solenoid gearPiston = RobotMap.gearPiston;
     Solenoid chickenLittle = RobotMap.chickenLittle;
+    Solenoid shooterPiston = RobotMap.shooterPiston;
+    
     private boolean previousChicken = RobotMap.chickenLittle.get(); //false
+    private boolean previousShooter = RobotMap.shooterPiston.get(); //false
 
     public void initDefaultCommand() 
     {}
@@ -22,5 +25,11 @@ public class Pistons extends Subsystem
     {
         previousChicken = !previousChicken;
         chickenLittle.set(previousChicken);
+    }
+    
+    public void toggleShooter()
+    {
+        previousShooter = !previousShooter;
+        shooterPiston.set(previousShooter);
     }
 }

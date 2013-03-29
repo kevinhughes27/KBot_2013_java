@@ -17,7 +17,8 @@ public class SpinUpShooter extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        CommandBase.shooter.spinUpShooter(1.0);
+        /*Open loop shooter*/ //CommandBase.shooter.spinUpShooter(1.0);
+        CommandBase.shooter.spinUpShooterPID(1.0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

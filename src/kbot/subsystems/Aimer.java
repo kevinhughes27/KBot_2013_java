@@ -8,7 +8,7 @@ import kbot.robot.RobotMap;
 
 public class Aimer extends Subsystem 
 {
-    SpeedController motor = RobotMap.aimerMotor;
+    SpeedController motor = RobotMap.flippyMotor;
     AnalogChannel pot = RobotMap.aimerPot;
     DigitalInput topLimit = RobotMap.topLimit;
     DigitalInput bottomLimit = RobotMap.bottomLimit;
