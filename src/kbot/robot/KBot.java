@@ -16,7 +16,8 @@ public class KBot extends IterativeRobot
         RobotMap.init();
         CommandBase.init();
         
-        autonomousCommand = new BackCenter3();
+        autonomousCommand = new PyramidBottom3();
+        //autonomousCommand = new BackCenter3();
         //autonomousCommand = new BackCenter3_openLoop();
     }
 

@@ -7,10 +7,10 @@ import kbot.robot.RobotMap;
 public class Pistons extends Subsystem 
 {    
     Solenoid gearPiston = RobotMap.gearPiston;
-    Solenoid chickenLittle = RobotMap.chickenLittle;
+    Solenoid miniChicken = RobotMap.miniChicken;
     Solenoid shooterPiston = RobotMap.shooterPiston;
     
-    private boolean previousChicken = RobotMap.chickenLittle.get(); //false
+    private boolean previousChicken = RobotMap.miniChicken.get(); //false
     private boolean previousShooter = RobotMap.shooterPiston.get(); //false
 
     public void initDefaultCommand() 
@@ -24,12 +24,17 @@ public class Pistons extends Subsystem
     public void toggleChicken()
     {
         previousChicken = !previousChicken;
-        chickenLittle.set(previousChicken);
+        miniChicken.set(previousChicken);
     }
     
     public void toggleShooter()
     {
         previousShooter = !previousShooter;
         shooterPiston.set(previousShooter);
+    }
+    
+    public void setShooter(boolean bool)
+    {
+        shooterPiston.set(bool);
     }
 }
