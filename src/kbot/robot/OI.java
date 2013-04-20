@@ -19,7 +19,7 @@ public class OI
     JoystickButton shooterToggle;
     
     //Driver buttons
-    JoystickButton chickenRelease;
+    JoystickButton miniChickenRelease;
     JoystickButton gearUp;
     JoystickButton gearDown;
     
@@ -35,7 +35,8 @@ public class OI
         shoot = new JoystickButton(opXbox.m_joy, opXbox.XBOX_RB);
 
         //Driver buttons
-        chickenRelease = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_A);
+        /*removed because of new TimeOut system*/
+        miniChickenRelease = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_A);
         gearUp = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_RB);
         gearDown = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_LB);
         
@@ -45,7 +46,7 @@ public class OI
         shoot.whileHeld(new SpinUpShooter());
         
         //Driver buttons initialize
-        chickenRelease.whenPressed(new ChickenRelease());
+        miniChickenRelease.whenPressed(new ChickenRelease());
         gearUp.whenPressed(new GearUp());
         gearDown.whenPressed(new GearDown());
     }

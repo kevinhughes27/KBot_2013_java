@@ -17,13 +17,14 @@ public class RobotMap
     private static final int CHICKEN_RELEASE = 1;
     private static final int GEAR_PISTON = 2;
     private static final int SHOOTER_PISTON = 3;
+    private static final int MINI_CHICKEN = 4;
     private static final int AIMING_PISTON = 5;
 
     //Digital Sidecar
     private static final int TOP_LIMIT = 10;
     private static final int BOTTOM_LIMIT = 12;
-    private static final int SHOOTER_ENCODER_A = 14;
-    private static final int SHOOTER_ENCODER_B = 15;
+    private static final int SHOOTER_ENCODER_A = 13;
+    private static final int SHOOTER_ENCODER_B = 14;
 
     //Analog data
     private static final int POTENTIOMETER = 1;
@@ -33,7 +34,7 @@ public class RobotMap
     public static SpeedController rightMotor;
     public static RobotDrive robotDrive;
     public static Solenoid gearPiston;
-    public static Solenoid chickenLittle;
+    public static Solenoid miniChicken;
     
     //Aiming
     public static SpeedController flippyMotor;
@@ -50,6 +51,7 @@ public class RobotMap
     
     //Other
     public static Compressor compressor;
+    public static Solenoid chickenLittle;
     
     public static void init()
     {
@@ -60,8 +62,12 @@ public class RobotMap
         //Pneumatics
         gearPiston = new Solenoid(GEAR_PISTON);
         gearPiston.set(true);
+            /*chickenLittle deploys the hooks*/
         chickenLittle = new Solenoid(CHICKEN_RELEASE);
 	chickenLittle.set(false);
+            /*miniChicken changes the height of the hooks*/
+        miniChicken = new Solenoid(MINI_CHICKEN);
+        miniChicken.set(false);
             /*Shooter piston fires the frisbees*/
 	shooterPiston = new Solenoid(SHOOTER_PISTON);
 	shooterPiston.set(false);
