@@ -16,7 +16,6 @@ public class OI
     //Operator buttons
     JoystickButton push;
     JoystickButton shoot;
-    JoystickButton visionToggle;
     JoystickButton shooterToggle;
     
     //Driver buttons
@@ -34,7 +33,6 @@ public class OI
         push = new JoystickButton(opXbox.m_joy, opXbox.XBOX_A);
         shooterToggle = new JoystickButton(opXbox.m_joy, opXbox.XBOX_LB);
         shoot = new JoystickButton(opXbox.m_joy, opXbox.XBOX_RB);
-        visionToggle = new JoystickButton(opXbox.m_joy, opXbox.XBOX_B);
 
         //Driver buttons
         chickenRelease = new JoystickButton(driverLogitech.m_joy, driverLogitech.XBOX_A);
@@ -45,7 +43,6 @@ public class OI
         push.whenPressed(new PushFrisbee());
         shooterToggle.whenPressed(new ToggleAim());
         shoot.whileHeld(new SpinUpShooter());
-        visionToggle.whenPressed(new ToggleVision());
         
         //Driver buttons initialize
         chickenRelease.whenPressed(new ChickenRelease());

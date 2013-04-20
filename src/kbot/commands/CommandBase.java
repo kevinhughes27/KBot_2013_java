@@ -19,7 +19,6 @@ public abstract class CommandBase extends Command
     public static DriveTrain driveTrain = new DriveTrain();
     public static Pistons pistons = new Pistons();
     public static Shooter shooter = new Shooter();
-    public static VisionSystem visionSystem = new VisionSystem();
     
     public static void init() 
     {

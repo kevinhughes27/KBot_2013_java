@@ -10,7 +10,6 @@ public class DriveTrain extends Subsystem
     SpeedController leftMotor = RobotMap.leftMotor;
     SpeedController rightMotor = RobotMap.rightMotor;
     RobotDrive robotDrive = RobotMap.robotDrive;
-    boolean speedset = false;
     
     private static final double DRIVER_DEADBAND = 0.10;
     

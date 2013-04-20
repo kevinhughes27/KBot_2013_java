@@ -32,4 +32,9 @@ public class Pistons extends Subsystem
         previousShooter = !previousShooter;
         shooterPiston.set(previousShooter);
     }
+    
+    public void setShooter(boolean bool)
+    {
+        shooterPiston.set(bool);
+    }
 }

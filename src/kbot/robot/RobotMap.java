@@ -17,7 +17,6 @@ public class RobotMap
     private static final int CHICKEN_RELEASE = 1;
     private static final int GEAR_PISTON = 2;
     private static final int SHOOTER_PISTON = 3;
-    private static final int VISION_LIGHTS = 4;
     private static final int AIMING_PISTON = 5;
 
     //Digital Sidecar
@@ -51,7 +50,6 @@ public class RobotMap
     
     //Other
     public static Compressor compressor;
-    public static Solenoid ringLED;
     
     public static void init()
     {
@@ -64,18 +62,17 @@ public class RobotMap
         gearPiston.set(true);
         chickenLittle = new Solenoid(CHICKEN_RELEASE);
 	chickenLittle.set(false);
+            /*Shooter piston fires the frisbees*/
 	shooterPiston = new Solenoid(SHOOTER_PISTON);
 	shooterPiston.set(false);
+            /*Aiming piston changes the shooter's position*/
         aimingPiston = new Solenoid(AIMING_PISTON);
         aimingPiston.set(false);
-        
-        //Starting Vision Lights
-	ringLED = new Solenoid(VISION_LIGHTS);
-	ringLED.set(false);
 
         //Initializing motors
 	leftMotor = new Talon(LEFT_MOTOR);
 	rightMotor = new Talon(RIGHT_MOTOR);
+            /*Flippy motor is used for changing frisbee distance*/
         flippyMotor = new Talon(FLIPPY_MOTOR);
 	shooterFrontMotor = new Talon(SHOOTER_FRONT);
 	shooterBackMotor = new Talon(SHOOTER_BACK);
@@ -93,6 +90,7 @@ public class RobotMap
         shooterEncoder.start();
 	
 	//Initializing Digital Inputs
+            /*Limit switches were for aiming shooter, now for flippy*/
 	topLimit = new DigitalInput(TOP_LIMIT);
 	bottomLimit = new DigitalInput(BOTTOM_LIMIT);
     }
