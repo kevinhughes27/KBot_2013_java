@@ -1,6 +1,7 @@
 package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class GearUp extends Command 
 {
@@ -17,7 +18,7 @@ public class GearUp extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        CommandBase.pistons.gearChange(true);
+        CommandBase.pistons.gearChange(DoubleSolenoid.Value.kForward);
     }
 
     // Make this return true when this Command no longer needs to run execute()

@@ -35,14 +35,7 @@ public class DriveTrain extends Subsystem
             rightStick = 0.0;
 	}
         
-        if(Math.abs(CommandBase.oi.driverLogitech.getTrigger()) > 0.0)
-        {
-            robotDrive.tankDrive(leftStick*0.5, rightStick*0.5, true);
-        }
-        else
-        {
-            robotDrive.tankDrive(leftStick, rightStick, true);
-        }
+        robotDrive.tankDrive(-leftStick, -rightStick, true);
     }
     
 }

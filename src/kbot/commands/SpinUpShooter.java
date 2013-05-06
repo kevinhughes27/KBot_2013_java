@@ -6,10 +6,8 @@ public class SpinUpShooter extends Command
 {
     
     public SpinUpShooter() 
-    {
-        requires(CommandBase.shooter);
-    }
-    
+    {}
+
     // Called just before this Command runs the first time
     protected void initialize() 
     {}
@@ -17,8 +15,7 @@ public class SpinUpShooter extends Command
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        /*Open loop shooter*/ //CommandBase.shooter.spinUpShooter(1.0);
-        CommandBase.shooter.spinUpShooterPID(1.0);
+        CommandBase.shooter.spinUpShooter();
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,6 +27,7 @@ public class SpinUpShooter extends Command
     // Called once after isFinished returns true
     protected void end() 
     {
+        //CommandBase.shooter.stop();
         CommandBase.shooter.stopShooter();
     }
 

@@ -2,56 +2,51 @@ package kbot.subsystems;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import kbot.robot.RobotMap;
 
 public class Shooter extends Subsystem 
 {
-    SpeedController shooterFront = RobotMap.shooterFrontMotor;
-    SpeedController shooterBack = RobotMap.shooterBackMotor;
-    Solenoid piston = RobotMap.shooterPiston;
-    Encoder shooterEnc = RobotMap.shooterEncoder;
+    private static double speed = -0.8;
+    private static final double increase = 0.05;
+    SpeedController frontMotor = RobotMap.shooterFrontMotor;
+    SpeedController backMotor = RobotMap.shooterBackMotor;
     
-    private final static double pK = 0.5;
-    private final static double iK = 0.0;
-    private final static double dK = 0.0;
-    private double lastSpeedErr = 0.0;
-    private double integralCounter = 0.0;
-    private double setSpeed = 0.0;
+    DoubleSolenoid piston = RobotMap.shooterPiston;
 
     public void initDefaultCommand() 
     {}
     
-    public void pushFrisbee(boolean pistonSetting)
+    public void pushFrisbee(DoubleSolenoid.Value pistonSetting)
     {
         piston.set(pistonSetting);
     }
     
-    public void spinUpShooter(double speed)
+    public void spinUpShooter()
     {
-        shooterFront.set(speed);
-        shooterBack.set(speed);
+        frontMotor.set(speed);
+        backMotor.set(speed);
+        SmartDashboard.putNumber("Wheel Speed: ", speed);
     }
     
     public void stopShooter()
     {
-        shooterFront.set(0.0);
-        shooterBack.set(0.0);
+        frontMotor.set(0.0);
+        backMotor.set(0.0);
     }
     
-    public void spinUpShooterPID(double speedTarget)
+    public void increaseSpeed()
     {
-        double speedErr = speedTarget - shooterEnc.getRaw();
-        double pKErr = speedErr * pK;
-        double iKErr = integralCounter * iK;
-        double dKErr = (lastSpeedErr - speedErr) * dK;
-        
-        lastSpeedErr = speedErr;
-        integralCounter += speedErr;
-        
-        double speedDifference = pKErr + iKErr + dKErr;
-        
-        setSpeed += speedDifference;
-        
-        spinUpShooter(setSpeed);
+        speed -= increase;
+    }
+    
+    public void decreaseSpeed()
+    {
+        speed += increase;
+    }
+    
+    public void resetSpeed()
+    {
+        speed = -0.8;
     }
 }

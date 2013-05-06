@@ -17,8 +17,6 @@ public class KBot extends IterativeRobot
         CommandBase.init();
         
         autonomousCommand = new PyramidBottom3();
-        //autonomousCommand = new BackCenter3();
-        //autonomousCommand = new BackCenter3_openLoop();
     }
 
     public void autonomousInit() 
@@ -32,12 +30,16 @@ public class KBot extends IterativeRobot
     }
 
     public void teleopInit() 
-    {
+    {        
         autonomousCommand.cancel();
+        RobotMap.reset();
     }
 
     public void teleopPeriodic() 
     {
-        Scheduler.getInstance().run();
+        Scheduler.getInstance().run();        
     }
+    
+    public void disabledInit()
+    {}
 }
