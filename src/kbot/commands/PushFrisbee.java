@@ -1,14 +1,13 @@
 package kbot.commands;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 
 public class PushFrisbee extends Command 
 {
     
     public PushFrisbee() 
-    {
-        requires(CommandBase.shooter);
-    }
+    {}
     
     public PushFrisbee(double time) 
     {
@@ -19,25 +18,25 @@ public class PushFrisbee extends Command
     // Called just before this Command runs the first time
     protected void initialize() 
     {
-        CommandBase.shooter.pushFrisbee(true);
+        
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
     {
-        
+        CommandBase.shooter.pushFrisbee(DoubleSolenoid.Value.kReverse);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-        return false || isTimedOut();
+        return false || isTimedOut(); //return false;
     }
 
     // Called once after isFinished returns true
     protected void end() 
     {
-        CommandBase.shooter.pushFrisbee(false);
+        CommandBase.shooter.pushFrisbee(DoubleSolenoid.Value.kForward);
     }
 
     // Called when another command which requires one or more of the same

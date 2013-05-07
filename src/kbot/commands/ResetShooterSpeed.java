@@ -1,27 +1,27 @@
 package kbot.commands;
 
-public class SetAimDown extends CommandBase 
+import edu.wpi.first.wpilibj.command.Command;
+
+public class ResetShooterSpeed extends Command 
 {
-    public SetAimDown() 
-    {
-        requires(CommandBase.pistons);
-    }
+    
+    public ResetShooterSpeed() 
+    {}
 
     // Called just before this Command runs the first time
     protected void initialize() 
-    {
-        /*The position of this shooter needs to be set to bottom of pyramid*/
-        CommandBase.pistons.setShooter(true);
-    }
+    {}
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() 
-    {}
+    {
+        CommandBase.shooter.resetSpeed();
+    }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() 
     {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true

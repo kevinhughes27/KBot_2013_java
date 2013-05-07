@@ -15,11 +15,9 @@ public abstract class CommandBase extends Command
     public static OI oi;
     
     // Create a single static instance of all of your subsystems
-    public static Aimer aimer = new Aimer();
     public static DriveTrain driveTrain = new DriveTrain();
     public static Pistons pistons = new Pistons();
     public static Shooter shooter = new Shooter();
-    public static Chicken chicken = new Chicken();
     
     public static void init() 
     {

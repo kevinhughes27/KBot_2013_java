@@ -6,9 +6,7 @@ public class ChickenRelease extends Command
 {
     
     public ChickenRelease() 
-    {
-        requires(CommandBase.pistons);
-    }
+    {}
     
     // Called just before this Command runs the first time
     protected void initialize() 
