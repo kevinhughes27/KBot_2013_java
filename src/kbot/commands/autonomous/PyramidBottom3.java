@@ -11,23 +11,23 @@ public class PyramidBottom3 extends CommandGroup
     in case of a jam or misfire*/
     public PyramidBottom3() 
     {
-        addSequential( new SetAimUp() );
-        addParallel( new SpinUpShooter() );
-	addSequential( new WaitCommand(3.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-	addSequential( new PushFrisbee(0.5) );
-	addSequential( new WaitCommand(1.5) );
-        addSequential( new PushFrisbee(0.5) );
-        addSequential( new WaitCommand(1.5) );
-        addSequential( new PushFrisbee(0.5) );
+		addSequential( new SetAimUp() );
+		addParallel( new SpinUpShooter() );
+		addSequential( new WaitCommand(3.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
+		addSequential( new WaitCommand(1.5) );
+		addSequential( new PushFrisbee(0.5) );
     }
 }

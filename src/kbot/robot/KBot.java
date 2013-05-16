@@ -41,5 +41,7 @@ public class KBot extends IterativeRobot
     }
     
     public void disabledInit()
-    {}
+    {
+    
+    }
 }

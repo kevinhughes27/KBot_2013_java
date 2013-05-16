@@ -43,37 +43,37 @@ public class RobotMap
     
     public static void init()
     {
-        //Starting compressor
-        compressor = new Compressor(COMPRESSOR_SWITCH_CHANNEL, COMPRESSOR_RELAY_CHANNEL);
-        compressor.start();
-        
-        //Pneumatics
-        gearPiston = new DoubleSolenoid(1, GEAR_PISTON_A, GEAR_PISTON_B);
-        gearPiston.set(DoubleSolenoid.Value.kReverse); //k.Forward is low gear
-            /*hanger deploys the gas spring*/
-        hanger = new DoubleSolenoid(1, HANGER_PISTON_A, HANGER_PISTON_B);
-        hanger.set(DoubleSolenoid.Value.kForward); //k.forward is holding gas spring
-            /*chickenLittle changes the height of the hooks*/
-        chickenLittle = new DoubleSolenoid(2, CHICKEN_RELEASE_A, CHICKEN_RELEASE_B);
-        chickenLittle.set(DoubleSolenoid.Value.kReverse);//k.forward is up
-            /*Shooter piston fires the frisbees*/
-	shooterPiston = new DoubleSolenoid(1,SHOOTER_PISTON_A, SHOOTER_PISTON_B);
-	shooterPiston.set(DoubleSolenoid.Value.kForward); //k.Forward is loading position
-            /*Aiming piston changes the shooter's position*/
-        aimingPiston = new DoubleSolenoid(2,AIMING_PISTON_A, AIMING_PISTON_B);
-        aimingPiston.set(DoubleSolenoid.Value.kForward); //k.Forward is up
+		//Starting compressor
+		compressor = new Compressor(COMPRESSOR_SWITCH_CHANNEL, COMPRESSOR_RELAY_CHANNEL);
+		compressor.start();
 
-        //Initializing motors
-	leftMotor = new Talon(LEFT_MOTOR);
-	rightMotor = new Talon(RIGHT_MOTOR);
-	shooterFrontMotor = new Talon(SHOOTER_FRONT);
-	shooterBackMotor = new Talon(SHOOTER_BACK);
-        
-        //RobotDrive
-        robotDrive = new RobotDrive(leftMotor, rightMotor);
-	robotDrive.setMaxOutput(1.0);
-	robotDrive.setExpiration(0.01);
-	robotDrive.setSafetyEnabled(false);
+		//Pneumatics
+		gearPiston = new DoubleSolenoid(1, GEAR_PISTON_A, GEAR_PISTON_B);
+		gearPiston.set(DoubleSolenoid.Value.kReverse); //k.Forward is low gear
+		/*hanger deploys the gas spring*/
+		hanger = new DoubleSolenoid(1, HANGER_PISTON_A, HANGER_PISTON_B);
+		hanger.set(DoubleSolenoid.Value.kForward); //k.forward is holding gas spring
+		/*chickenLittle changes the height of the hooks*/
+		chickenLittle = new DoubleSolenoid(2, CHICKEN_RELEASE_A, CHICKEN_RELEASE_B);
+		chickenLittle.set(DoubleSolenoid.Value.kReverse);//k.forward is up
+		/*Shooter piston fires the frisbees*/
+		shooterPiston = new DoubleSolenoid(1,SHOOTER_PISTON_A, SHOOTER_PISTON_B);
+		shooterPiston.set(DoubleSolenoid.Value.kForward); //k.Forward is loading position
+		/*Aiming piston changes the shooter's position*/
+		aimingPiston = new DoubleSolenoid(2,AIMING_PISTON_A, AIMING_PISTON_B);
+		aimingPiston.set(DoubleSolenoid.Value.kForward); //k.Forward is up
+
+		//Initializing motors
+		leftMotor = new Talon(LEFT_MOTOR);
+		rightMotor = new Talon(RIGHT_MOTOR);
+		shooterFrontMotor = new Talon(SHOOTER_FRONT);
+		shooterBackMotor = new Talon(SHOOTER_BACK);
+		    
+		//RobotDrive
+		robotDrive = new RobotDrive(leftMotor, rightMotor);
+		robotDrive.setMaxOutput(1.0);
+		robotDrive.setExpiration(0.01);
+		robotDrive.setSafetyEnabled(false);
     }
     
     //Reinitializes all pistons to their original settings
